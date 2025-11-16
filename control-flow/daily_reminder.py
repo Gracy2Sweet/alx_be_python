@@ -2,7 +2,6 @@ task = input("Enter your task: ")
 priority = input("Priority (high/medium/low): ").lower()
 time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-# Match Case for priority handling
 match priority:
     case "high":
         message = f"Reminder: '{task}' is a high priority task"
@@ -13,14 +12,12 @@ match priority:
     case _:
         message = f"Note: '{task}' has an unknown priority"
 
-# Time-bound modification
 if time_bound == "yes":
     message += " that requires immediate attention today!"
 else:
     if priority in ["low", "medium"]:
         message += ". Consider completing it when you have free time."
 
-print()
 print(message)
 
             
